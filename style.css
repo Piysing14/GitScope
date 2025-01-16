@@ -1,130 +1,281 @@
+
+
 /* General styles */
 body {
-    margin: 0;
-    padding: 0;
-    font-family: 'Arial', sans-serif;
-    background: linear-gradient(to right, #ece9e6, #ffffff);
-    color: #333;
-    text-align: center;
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(to right, #ece9e6, #ffffff);
+  color: #333;
+  text-align: center;
+  font-family: 'Roboto', sans-serif;
+
+    }
+
+/* Container */
+.container {
+  padding: 20px;
+  max-width: 1000px;
+  margin: 50px auto;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  background: #ffffff;
+  border-radius: 8px;
+}
+
+h1, h2, h3, p {
+  font-family: 'Roboto', sans-serif;
+}
+
+/* Header */
+h1 {
+  font-size: 3rem;
+  color: #007acc;
+  margin-bottom: 10px;
+}
+
+p {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+}
+
+/* Input section */
+#user-input-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+#user-input {
+  padding: 10px;
+  font-size: 1rem;
+  border: 2px solid #007acc;
+  border-radius: 5px;
+  outline: none;
+  flex: 1;
+  max-width: 300px;
+  margin-right: 10px;
+}
+
+#search-btn {
+  padding: 10px 20px;
+  font-size: 1rem;
+  border: none;
+  background: #007acc;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+#search-btn:hover {
+  background: #005f99;
+}
+
+/* Stats container */
+#stats-container {
+  padding: 15px;
+  border-top: 2px solid #f0f0f0;
+
+}
+
+#progree {
+  margin: 20px 0;
+}
+
+#progress-item1 {
+  width: 70%;
+  height: 10px;
+  background: #007acc;
+  border-radius: 5px;
+  animation: progressAnimation 1.5s ease-in-out;
+}
+
+/* Stats card */
+.stats-card {
+  margin-top: 20px;
+  padding: 15px;
+  background: #f9f9f9;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Animation */
+@keyframes progressAnimation {
+  from {
+    width: 0;
   }
-  
-  /* Container */
-  .container {
-    padding: 20px;
-    max-width: 1000px;
-    margin: 50px auto;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    background: #ffffff;
-    border-radius: 8px;
+  to {
+    width: 70%;
   }
-  
-  /* Header */
+}
+
+/* Responsive design */
+@media (max-width: 600px) {
   h1 {
-    font-size: 3rem;
-    color: #007acc;
+    font-size: 2rem;
+  }
+  #user-input-container {
+    flex-direction: column;
+  }
+  #user-input {
+    margin-right: 0;
     margin-bottom: 10px;
   }
-  
-  p {
-    font-size: 1.2rem;
-    margin-bottom: 20px;
-  }
-  
-  /* Input section */
-  #user-input-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 30px;
-  }
-  
-  #user-input {
-    padding: 10px;
-    font-size: 1rem;
-    border: 2px solid #007acc;
-    border-radius: 5px;
-    outline: none;
-    flex: 1;
-    max-width: 300px;
-    margin-right: 10px;
-  }
-  
-  #search-btn {
-    padding: 10px 20px;
-    font-size: 1rem;
-    border: none;
-    background: #007acc;
-    color: white;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background 0.3s;
-  }
-  
-  #search-btn:hover {
-    background: #005f99;
-  }
-  
-  /* Stats container */
-  #stats-container {
-    padding: 15px;
-    border-top: 2px solid #f0f0f0;
+}
 
-  }
-  
-  #progree {
-    margin: 20px 0;
-  }
-  
-  #progress-item1 {
-    width: 70%;
-    height: 10px;
-    background: #007acc;
-    border-radius: 5px;
-    animation: progressAnimation 1.5s ease-in-out;
-  }
-  
-  /* Stats card */
-  .stats-card {
-    margin-top: 20px;
-    padding: 15px;
-    background: #f9f9f9;
-    border-radius: 5px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  }
-  
-  /* Animation */
-  @keyframes progressAnimation {
-    from {
-      width: 0;
-    }
-    to {
-      width: 70%;
-    }
-  }
-  
-  /* Responsive design */
-  @media (max-width: 600px) {
-    h1 {
-      font-size: 2rem;
-    }
-    #user-input-container {
-      flex-direction: column;
-    }
-    #user-input {
-      margin-right: 0;
-      margin-bottom: 10px;
-    }
-  }
-  
-  .card {
-    background-color: lightblue;
-    border-radius: 75px;
-    font-size: medium; /* Default font size */
-    transition: background-color 0.3s ease, border-radius 0.3s ease, font-size 0.3s ease; /* Smooth transition */
+.card {
+  background-color: lightblue;
+  border-radius: 75px;
+  font-size: medium; /* Default font size */
+  transition: background-color 0.3s ease, border-radius 0.3s ease, font-size 0.3s ease; /* Smooth transition */
 }
 
 .card:hover {
-    background-color: skyblue; /* Change background color on hover */
-    border-radius: 75px; /* Keep the border radius */
-    font-size: large; /* Increase font size on hover */
+  background-color: skyblue; /* Change background color on hover */
+  border-radius: 75px; /* Keep the border radius */
+  font-size: large; /* Increase font size on hover */
+}
+
+
+
+/* Profile Container */
+.profile-container {
+  max-width: 800px;
+  margin: auto;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+}
+
+/* Profile Header */
+.profile-header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.profile-header h1 {
+  margin: 0;
+  font-size: 2.5em;
+}
+
+.profile-username {
+  color: #666;
+  font-size: 1.2em;
+}
+
+/* Profile Details Section */
+.profile-details {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.profile-image {
+  flex: 1;
+  text-align: center;
+}
+
+
+.profile-image img {
+  margin-bottom: 27px;
+  width: 250px;
+  height: 250px;
+  object-fit: cover;
+  border: 3px solid maroon; /* Bootstrap primary color */
+}
+
+
+.profile-info {
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; /* Aligns all children to the right */
+  text-align: left; /* Ensures the text aligns to the right */
+}
+
+.profile-info p {
+  padding-left: 20px;
+  margin: 5px 0; /* Adds spacing between paragraphs */
+}
+
+.profile-info a {
+  text-decoration: none; /* Optional: removes underline from links */
+  color: inherit; /* Optional: makes the link color inherit from the text color */
+}
+.profile-info a:hover {
+  text-decoration: underline;
+}
+
+/* Stats Section */
+.profile-stats {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+
+}
+
+.stat-item {
+  flex: 1 1 45%; /* Allow items to take up to 45% of the row */
+  background: lightgreen;
+  border-radius: 5px;
+  padding: 10px;
+  margin: 5px;
+  text-align: center;
+  border: solid black;
+  
+
+}
+
+/* Media Queries for Responsive Design */
+@media (max-width: 768px) {
+  .profile-details {
+      flex-direction: column; /* Stack the image and info on smaller screens */
+      align-items: center;
+  }
+  .profile-image {
+      margin-bottom: 20px; /* Add space below the image */
+  }
+  .profile-info {
+      padding-left: 0;
+  }
+  
+  .profile-stats {
+      flex-direction: column; /* Stack stats vertically on smaller screens */
+  }
+}
+
+
+/* Heart icon styling */
+footer .text-red-500 {
+  color: red;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.social-media {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  display: flex;
+  gap: 15px;
+}
+
+.social-media a {
+  text-decoration: none;
+}
+
+.icon {
+  width: 30px;
+  height: 30px;
+  transition: transform 0.3s ease;
+}
+
+.icon:hover {
+  transform: scale(1.1);
 }
