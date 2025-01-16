@@ -96,6 +96,7 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
   async function renderGraphs(userName) {
+    
     try {
       if (!userName.trim()) throw new Error("Please enter a valid GitHub username.");
       const testUrl = `https://api.github.com/users/${userName}`;
@@ -138,6 +139,11 @@ async function renderProfile(userName) {
       month: "long", 
       day: "numeric", 
     });
+
+    if(data.name==null){
+      throw new Error("Account exist with no Personal details !")
+  
+    }
     Profile.innerHTML = ` <div class="profile-container">
       <!-- Profile Header -->
       <header class="profile-header">
