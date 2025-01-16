@@ -133,10 +133,10 @@ async function renderProfile(userName) {
     let accountCreationDate = new Date(data.created_at); // Convert the ISO date string to a Date object
     let formattedDate = accountCreationDate.toLocaleDateString("en-US", {
       // Format the date
-      weekday: "long", // Full weekday name (e.g., "Monday")
-      year: "numeric", // Full year (e.g., "2023")
-      month: "long", // Full month name (e.g., "August")
-      day: "numeric", // Day of the month
+      weekday: "long", 
+      year: "numeric", 
+      month: "long", 
+      day: "numeric", 
     });
     Profile.innerHTML = ` <div class="profile-container">
       <!-- Profile Header -->
@@ -165,9 +165,16 @@ async function renderProfile(userName) {
     ${data.twitter_username ? data.twitter_username : "Account not found"}
   </a>
 </p>
-          <p><strong>Website:</strong> <a href="${
-            data.blog
-          }" target="_blank">Portfolio</a></p>
+</p>    <p><strong>Website:</strong> 
+  <a href="${
+    data.blog
+      ? `${data.blog}`
+      : "https://agentestudio.com/uploads/post/image/69/main_how_to_design_404_page.png"
+  }" target="_blank">
+    ${data.blog ? data.blog : "Website not found"}
+  </a>
+</p>
+          
           <p><strong>Account Creation Date:</strong> ${formattedDate}</p>
         </div>
       </section>
@@ -190,6 +197,6 @@ async function renderProfile(userName) {
           <strong>Hireable:</strong> ${data.hireable ? "Yes" : "No"}
         </div>`;
   } catch (error) {
-    Profile.innerHTML = `<p>${error.message}</p>`; // Show error in the Profile container
+    Profile.innerHTML = `<p>${error.message}</p>`;
   }
 }
