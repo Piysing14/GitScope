@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", function () {
   let statsContainer = document.querySelector("#stats-container");
   let progress = document.querySelector("#progress");
   let progressItem1 = document.querySelector("progress-item1");
-  let statsCard = document.querySelector("stats-card");
+  let statsCard = document.querySelector(".stats-card");
 
 
 
@@ -30,9 +30,6 @@ function displayUserData(data) {
         value: data.total[all[i]]
       });
     }
-  
-    console.log(`Github account age: ${totalLength}`);
-    console.log(`Total Contributions : ${allContri}`);
     
     // Update total contributions in progressData
     progressData[1].value = allContri;
@@ -92,4 +89,31 @@ function displayUserData(data) {
       fetchUserDetails(userName);
     }
   });
+
+  searchButton.addEventListener("click", () => {
+    let userName = userInput.value;
+    renderGraphs(userName)
+
+  });
+
+  function renderGraphs(userName){
+    statsCard.innerHTML=`<div class="my-8"> <h3 class="text-3xl font-bold text-gray-700 mb-4"></h3> <img src="https://github-readme-stats.vercel.app/api?username=${userName}&show_icons=true&theme=default" alt="GitHub Stats" class="mx-auto"> 
+
+</div> <div class="my-8"> <img src="https://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=${userName}&theme=default" alt="GitHub Stats" class="mx-auto"> </div>
+ 
+ <div class="my-8"> <h3 class="text-3xl font-bold text-gray-700 mb-4"></h3> <img src="http://github-profile-summary-cards.vercel.app/api/cards/repos-per-language?username=${userName}&theme=default" alt="GitHub Stats" class="mx-auto">
+
+  <div class="my-8"> <h3 class="text-3xl font-bold text-gray-700 mb-4"></h3> <img src="http://github-profile-summary-cards.vercel.app/api/cards/most-commit-language?username=${userName}&theme=default" alt="GitHub Stats" class="mx-auto">
+
+    <div class="my-8"> <h3 class="text-3xl font-bold text-gray-700 mb-4"></h3> <img src="http://github-profile-summary-cards.vercel.app/api/cards/stats?username=${userName}&theme=default" alt="GitHub Stats" class="mx-auto">
+
+      <div class="my-8"> <h3 class="text-3xl font-bold text-gray-700 mb-4"></h3> <img src="http://github-profile-summary-cards.vercel.app/api/cards/productive-time?username=${userName}&theme=default&utcOffset=8" alt="GitHub Stats" class="mx-auto">
+       
+       <div class="my-8"> <h3 class="text-3xl font-bold text-gray-700 mb-4"></h3> <img src="https://github-profile-trophy.vercel.app/?username=${userName}&theme=default" alt="GitHub Stats" class="mx-auto">
+        <div class="my-8"> <h3 class="text-3xl font-bold text-gray-700 mb-4"></h3> <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=${userName}&layout=compact&theme=default" alt="GitHub Stats" class="mx-auto">`
+  }
+
+
 });
+
+
