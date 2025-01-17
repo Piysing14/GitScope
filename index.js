@@ -101,7 +101,7 @@ document.addEventListener("DOMContentLoaded", function () {
       if (!userName.trim()) throw new Error("Please enter a valid GitHub username.");
       const testUrl = `https://github-contributions-api.jogruber.de/v4/${userName}`;
       const response = await fetch(testUrl);
-      if (!response.ok) throw new Error("GitHub user not found. Please check the username.");
+      if (!response.ok) throw new Error("GitHub graphs not found.");
 
 
       statsCard.innerHTML = `<div class="my-8"> <h3 class="text-3xl font-bold text-gray-700 mb-4"></h3> <img src="https://github-readme-stats.vercel.app/api?username=${userName}&show_icons=true&theme=default" alt="GitHub Stats" class="mx-auto"> 
