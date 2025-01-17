@@ -53,7 +53,7 @@ document.addEventListener("DOMContentLoaded", function () {
       searchButton.textContent = "Searching..";
       searchButton.disabled = true;
       const response = await fetch(url);
-      if (!response.ok) throw new Error("Try again!");
+      if (!response.ok) throw new Error("Github account age and contributions not found!");
       let data = await response.json();
       console.log(data);
       displayUserData(data);
@@ -99,7 +99,7 @@ document.addEventListener("DOMContentLoaded", function () {
     
     try {
       if (!userName.trim()) throw new Error("Please enter a valid GitHub username.");
-      const testUrl = `https://api.github.com/users/${userName}`;
+      const testUrl = `https://github-contributions-api.jogruber.de/v4/${userName}`;
       const response = await fetch(testUrl);
       if (!response.ok) throw new Error("GitHub user not found. Please check the username.");
 
